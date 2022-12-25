@@ -12,19 +12,19 @@ You'll first need to install [ESLint](https://eslint.org/):
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-no-require-assign`:
+Next, install `@parcellab/eslint-plugin-no-require-assign`:
 
 ```sh
-npm install eslint-plugin-no-require-assign --save-dev
+npm install @parcellab/eslint-plugin-no-require-assign --save-dev
 ```
 
 ## Usage
 
-Add `no-require-assign` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `@parcellab/eslint-plugin-no-require-assign` to the plugins section of your `.eslintrc` configuration file:
 
 ```json
 {
-  "plugins": ["no-require-assign"]
+  "plugins": ["@parcellab/eslint-plugin-no-require-assign"]
 }
 ```
 
@@ -33,7 +33,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "no-require-assign/rule-name": 2
+    "@parcellab/eslint-plugin-no-require-assign/rule-name": 2
   }
 }
 ```
