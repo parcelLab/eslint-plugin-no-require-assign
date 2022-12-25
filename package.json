@@ -1,0 +1,31 @@
+{
+  "name": "eslint-plugin-no-require-assign",
+  "version": "1.0.0",
+  "description": "Disallow assigning to required bindings",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Chia Wei",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha tests --recursive"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-plugin-eslint-plugin": "^5.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^10.0.0"
+  },
+  "engines": {
+    "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8",
+    "eslint-utils": ">=3"
+  },
+  "license": "MIT"
+}

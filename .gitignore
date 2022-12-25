@@ -13,3 +13,11 @@ Thumbs.db
 # General
 log/
 *.log
+tmp
+
+# Visual Studio Code
+.vscode
+
+# Node
+node_modules
+package-lock.json

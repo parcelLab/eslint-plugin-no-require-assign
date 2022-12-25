@@ -1,0 +1,25 @@
+name: Test
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - "**.js"
+    - "**.ts"
+    - "package.json"
+  pull_request:
+    paths:
+    - "**.js"
+    - "**.ts"
+    - "package.json"
+  workflow_dispatch:
+jobs:
+  test:
+    uses: ./.github/workflows/_js.yaml
+  release:
+    if: github.ref == 'refs/heads/main'
+    needs: test
+    uses: ./.github/workflows/_release.yaml
+    with:
+      draft: false
+    secrets: inherit

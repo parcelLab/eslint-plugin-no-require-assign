@@ -1,0 +1,43 @@
+name: Publish
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: The version to publish (e.g. 1.0.0)
+        required: true
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.load_version.outputs.version }}
+    steps:
+    - name: Load version
+      id: load_version
+      run: |
+        if [ "$GITHUB_EVENT_NAME" = 'workflow_dispatch' ]
+        then
+          VERSION="${{ github.event.inputs.version }}"
+        else
+          if [ "$GITHUB_EVENT_NAME" = 'release' ]
+          then
+            TAG_NAME="${{ github.event.release.tag_name }}"
+          else
+            TAG_NAME="${{ github.ref }}"
+          fi
+          CLEAN_TAG=${TAG_NAME##*/}
+          VERSION=${CLEAN_TAG//v}
+        fi
+        echo "::set-output name=version::$VERSION"
+  publish:
+    needs: version
+    uses: ./.github/workflows/_npm-publish.yaml
+    with:
+      access: public
+      buildBeforePublish: false
+      version: ${{ needs.version.outputs.version }}
+    secrets:
+      githubAuthToken: ${{ secrets.REPO_ACCESS_TOKEN_OPEN_SOURCE }}
+      npmjsAuthToken: ${{ secrets.NPM_TOKEN }}
