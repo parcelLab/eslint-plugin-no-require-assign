@@ -2,6 +2,8 @@
 
 Disallow assigning to required bindings
 
+Original author @weiliddat [@parcellab/eslint-config#51](https://github.com/parcelLab/eslint-config/pull/51)
+
 ## Installation
 
 You'll first need to install [ESLint](https://eslint.org/):
