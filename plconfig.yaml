@@ -1,0 +1,10 @@
+## Uncomment if you want to deploy to Kubernetes
+# deployment:
+#   name: APPNAME
+#   namespace: APPNAMESPACE
+#   chart: APPCHART # e.g. one of https://github.com/parcelLab/charts/tree/main/parcellab
+#   values:
+#     dev:
+#     prod:
+#     staging:
+#     test:
