@@ -45,7 +45,8 @@ on you machine:
 ## Contributing/Submitting changes
 
 - Check out a new branch based on `main` and name it to what you intend to do,
-based on the company's branch naming conventions:
+  based on the company's branch naming conventions:
+
   - Example:
 
     ```sh
@@ -59,6 +60,7 @@ based on the company's branch naming conventions:
     ```
 
   - Use one branch per fix/feature
+
 - Make your changes
   - Make sure to provide a spec for unit tests (and any other relevant tests).
   - When all tests pass, everything's fine.

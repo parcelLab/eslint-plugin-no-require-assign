@@ -11,14 +11,27 @@
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": " prettier --check . && eslint  --ext .ts,.tsx,.js,.jsx .",
+    "lint:commit": "commitlint -x @commitlint/config-conventional --edit",
+    "lint:fix": "prettier --write . && eslint --ext .ts,.tsx,.js,.jsx --fix .",
+    "prepare": "is-ci || husky install",
     "test": "mocha tests --recursive"
   },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
+  },
   "devDependencies": {
-    "eslint": "^8.22.0",
-    "eslint-plugin-eslint-plugin": "^5.0.0",
+    "@commitlint/cli": "17.3.0",
+    "@commitlint/config-conventional": "17.3.0",
+    "eslint": "^8.30.0",
+    "eslint-plugin-eslint-plugin": "^5.0.7",
     "eslint-plugin-node": "^11.1.0",
-    "mocha": "^10.0.0"
+    "husky": "^8.0.2",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1",
+    "mocha": "^10.2.0"
   },
   "engines": {
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"

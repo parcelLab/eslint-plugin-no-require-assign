@@ -2,16 +2,16 @@ name: Test
 on:
   push:
     branches:
-    - main
+      - main
     paths:
-    - "**.js"
-    - "**.ts"
-    - "package.json"
+      - "**.js"
+      - "**.ts"
+      - "package.json"
   pull_request:
     paths:
-    - "**.js"
-    - "**.ts"
-    - "package.json"
+      - "**.js"
+      - "**.ts"
+      - "package.json"
   workflow_dispatch:
 jobs:
   test:
