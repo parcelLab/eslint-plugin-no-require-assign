@@ -2,14 +2,18 @@
   "name": "eslint-plugin-no-require-assign",
   "version": "0.0.1",
   "description": "Disallow assigning to required bindings",
+  "main": "./lib/index.js",
+  "author": "Chia Wei",
+  "exports": "./lib/index.js",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "Chia Wei",
-  "main": "./lib/index.js",
-  "exports": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcelLab/eslint-plugin-no-require-assign.git"
+  },
   "scripts": {
     "lint": " prettier --check . && eslint  --ext .ts,.tsx,.js,.jsx .",
     "lint:commit": "commitlint -x @commitlint/config-conventional --edit",
