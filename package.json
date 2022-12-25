@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-no-require-assign",
+  "name": "@parcellab/eslint-plugin-no-require-assign",
   "version": "0.0.2",
   "description": "Disallow assigning to required bindings",
   "main": "./lib/index.js",
